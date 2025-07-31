@@ -1,3 +1,6 @@
+// Import CSS styles to ensure they are bundled
+import './styles/globals.css';
+
 // Export all components
 export * from './components';
 
