@@ -50,6 +50,7 @@ export interface ButtonProps {
   loading?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 export interface InputProps {

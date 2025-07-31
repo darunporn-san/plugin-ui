@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PluginProvider, Button, Input, usePluginContext } from '../src';
+import { PluginProvider, Button, Input, usePluginContext } from '../src/index';
 
 // ตัวอย่างการใช้งานพื้นฐาน
 const BasicExample: React.FC = () => {

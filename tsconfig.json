@@ -22,7 +22,9 @@
 
     /* Plugin development */
     "declaration": true,
+    "declarationDir": "dist",
     "outDir": "dist",
+    "emitDeclarationOnly": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PluginProvider, usePluginContext } from '../src';
+import { PluginProvider, usePluginContext } from '../src/index';
 
 // สร้าง Custom Component ที่ใช้ theme จาก context
 const CustomCard: React.FC<{ title: string; children: React.ReactNode }> = ({ 

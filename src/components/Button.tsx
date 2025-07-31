@@ -9,6 +9,7 @@ export const Button: React.FC<ButtonProps> = ({
   loading = false,
   onClick,
   children,
+  style,
 }) => {
   const { theme } = usePluginContext();
 
@@ -71,6 +72,7 @@ export const Button: React.FC<ButtonProps> = ({
     gap: theme.spacing.xs,
     ...getVariantStyles(),
     ...getSizeStyles(),
+    ...style, // Apply custom style prop
   };
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PluginProvider, Button, Input, usePluginContext, darkTheme } from '../src';
+import { PluginProvider, Button, Input, usePluginContext, darkTheme } from '../src/index';
 
 // Component ที่ใช้ usePluginContext
 const ThemeToggler: React.FC = () => {
