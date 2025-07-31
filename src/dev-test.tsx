@@ -26,14 +26,16 @@ const DevTest: React.FC = () => {
   });
 
   return (
-    <BasicInput
-      name="text"
-      control={control}
-      className="w-full"
-      required
-      label="Text Input"
-      tooltip="This is a tooltip"
-    />
+    <div className="w-52">
+      <BasicInput
+        name="text"
+        control={control}
+        className="w-full"
+        required
+        label="Text Input"
+        tooltip="This is a tooltip"
+      />
+    </div>
   );
 };
 
