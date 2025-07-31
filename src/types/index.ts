@@ -63,3 +63,13 @@ export interface InputProps {
   disabled?: boolean;
   theme?: Theme;
 }
+
+
+export interface BaseInputProps extends React.ComponentPropsWithoutRef<"input"> {
+  label?: string;
+  tooltip?: string;
+  error?: string;
+  required?: boolean;
+  placeholder?: string;
+  disabled?: boolean;
+}
