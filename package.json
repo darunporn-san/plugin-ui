@@ -1,10 +1,23 @@
 {
-  "name": "react-plugin-ui",
+  "name": "@darunporn-san/plugin-ui",
   "version": "1.0.0",
   "description": "React TypeScript Plugin UI Framework",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darunporn-san/plugin-ui.git"
+  },
+  "homepage": "https://github.com/darunporn-san/plugin-ui",
+  "bugs": {
+    "url": "https://github.com/darunporn-san/plugin-ui/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -13,7 +26,9 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint src --ext ts,tsx --fix",
     "format": "prettier --write src/**/*.{ts,tsx}",
-    "format:check": "prettier --check src/**/*.{ts,tsx}"
+    "format:check": "prettier --check src/**/*.{ts,tsx}",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
   },
   "keywords": [
     "react",
@@ -21,7 +36,7 @@
     "plugin",
     "ui"
   ],
-  "author": "",
+  "author": "darunporn-san",
   "license": "MIT",
   "dependencies": {
     "@types/react": "^19.1.9",
@@ -29,6 +44,10 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",

@@ -1,0 +1,28 @@
+# Source files
+src/
+examples/
+public/
+
+# Config files
+vite.config.ts
+tsconfig.json
+tsconfig.node.json
+.eslintrc.json
+.prettierrc
+
+# Development files
+index.html
+.env*
+
+# Build artifacts (keep only dist/)
+node_modules/
+*.log
+
+# Git and IDE
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Documentation (optional - remove if you want to include)
+# README.md
