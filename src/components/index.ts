@@ -1,4 +1,4 @@
 export { Button } from './Button';
-export { BasicInput } from './BasicInput';
+export { Input } from './Input';
 export { PluginProvider } from './PluginProvider';
 export { ThemeProvider } from './ThemeProvider';

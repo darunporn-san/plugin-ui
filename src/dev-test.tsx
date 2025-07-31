@@ -1,5 +1,5 @@
 import React from 'react';
-import { BasicInput } from './components';
+import { Input as BasicInput} from './components';
 import { useForm } from "react-hook-form";
 interface FormData {
   text: string;
