@@ -26,7 +26,8 @@ export const PluginProvider: React.FC<PluginProviderProps> = ({
     <PluginContextProvider.Provider value={contextValue}>
       <div
         style={{
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          fontFamily:
+            '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
           color: theme.colors.text,
           backgroundColor: theme.colors.background,
         }}

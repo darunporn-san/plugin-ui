@@ -1,4 +1,4 @@
-import type { Control } from "react-hook-form";
+import type { Control } from 'react-hook-form';
 
 export interface PluginConfig {
   name: string;
@@ -56,9 +56,9 @@ export interface BaseSelectOption {
   label: string;
 }
 
-
-export interface BaseInputProps extends React.ComponentPropsWithoutRef<"input"> {
-  type?: "text" | "number" | "password" | "select" | "checkbox";
+export interface BaseInputProps
+  extends React.ComponentPropsWithoutRef<'input'> {
+  type?: 'text' | 'number' | 'password' | 'select' | 'checkbox';
   name: string;
   control: Control<any>;
   label?: string;
@@ -73,5 +73,4 @@ export interface BaseInputProps extends React.ComponentPropsWithoutRef<"input"> 
   id?: string;
   disabled?: boolean;
   error?: string;
-
 }

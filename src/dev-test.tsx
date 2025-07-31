@@ -1,6 +1,6 @@
 import React from 'react';
-import { Input as BasicInput} from './components';
-import { useForm } from "react-hook-form";
+import { Input as BasicInput } from './components';
+import { useForm } from 'react-hook-form';
 interface FormData {
   text: string;
   theme: string;
@@ -15,12 +15,12 @@ interface FormData {
 const DevTest: React.FC = () => {
   const { control } = useForm<FormData>({
     defaultValues: {
-      text: "",
-      theme: "",
+      text: '',
+      theme: '',
       dateRange: undefined,
       allChannels: false,
       channels: [],
-      category: "",
+      category: '',
       excelFile: undefined,
     },
   });
