@@ -1,75 +1,53 @@
-import React from 'react';
-import { InputProps } from '@/types';
-import { useThemeContext } from '@/hooks/useThemeContext';
-import { defaultTheme } from '@/utils/theme';
+import * as React from "react";
+import { HelpCircle } from "lucide-react";
+import type { BaseInputProps } from '../types'
+import { Input } from "@/components/ui/input"
 
-export const Input: React.FC<InputProps> = ({
-  label,
-  placeholder,
-  value,
-  onChange,
-  error,
-  disabled = false,
-  theme: propTheme,
-}) => {
-  // Try to get theme from context, fallback to prop theme, then default theme
-  let theme;
-  try {
-    const contextTheme = useThemeContext();
-    theme = contextTheme;
-  } catch {
-    // If no context provider, use prop theme or default theme
-    theme = propTheme || defaultTheme;
-  }
-
-  const inputStyles: React.CSSProperties = {
-    width: '100%',
-    padding: `${theme.spacing.sm} ${theme.spacing.md}`,
-    border: `1px solid ${error ? theme.colors.error : theme.colors.border}`,
-    borderRadius: theme.borderRadius.md,
-    fontSize: '1rem',
-    backgroundColor: disabled ? theme.colors.surface : theme.colors.background,
-    color: theme.colors.text,
-    outline: 'none',
-    transition: 'border-color 0.2s ease-in-out',
-  };
-
-  const labelStyles: React.CSSProperties = {
-    display: 'block',
-    marginBottom: theme.spacing.xs,
-    fontSize: '0.875rem',
-    fontWeight: '500',
-    color: theme.colors.text,
-  };
-
-  const errorStyles: React.CSSProperties = {
-    marginTop: theme.spacing.xs,
-    fontSize: '0.875rem',
-    color: theme.colors.error,
-  };
-
-  const containerStyles: React.CSSProperties = {
-    marginBottom: theme.spacing.md,
-  };
+export const BasicInput: React.FC<BaseInputProps> = ({ label, tooltip, error, required, id, placeholder, disabled, ...props }) => {
 
   return (
-    <div style={containerStyles}>
-      {label && <label style={labelStyles}>{label}</label>}
-      <input
-        type="text"
-        style={inputStyles}
-        placeholder={placeholder}
-        value={value}
-        onChange={(e) => onChange?.(e.target.value)}
-        disabled={disabled}
-        onFocus={(e) => {
-          e.target.style.borderColor = theme.colors.primary;
-        }}
-        onBlur={(e) => {
-          e.target.style.borderColor = error ? theme.colors.error : theme.colors.border;
-        }}
-      />
-      {error && <div style={errorStyles}>{error}</div>}
+    <div className="flex flex-col gap-1 w-full relative">
+    {/* Always maintain consistent label area height */}
+    <div className="h-5 flex items-center gap-1">
+      {label && (
+        <label className="text-sm font-medium" htmlFor={id}>
+          {label}
+        </label>
+      )}
+      {tooltip && label && (
+        <div className="relative group">
+          <HelpCircle className="w-4 h-4 text-gray-400 cursor-help" />
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+            {tooltip}
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+          </div>
+        </div>
+      )}
     </div>
+
+    {/* input with required * beside it */}
+    <div className="flex items-center gap-1 relative">
+      <Input
+        aria-invalid={!!error}
+        id={id}
+        placeholder={placeholder || "กรุณากรอก"}
+        disabled={disabled}
+        {...props}
+        className="w-full"
+      />
+
+      {/* move the required * after the input */}
+      {required && (
+        <span className="text-red-500 text-sm">*</span>
+      )}
+    </div>
+
+    {/* error message */}
+    {error && (
+      <div className="text-xs text-red-500 mt-1">
+        {error}
+      </div>
+    )}
+  </div>
   );
 };
