@@ -51,6 +51,7 @@ export interface ButtonProps {
   onClick?: () => void;
   children: React.ReactNode;
   style?: React.CSSProperties;
+  theme?: Theme;
 }
 
 export interface InputProps {
@@ -60,4 +61,5 @@ export interface InputProps {
   onChange?: (value: string) => void;
   error?: string;
   disabled?: boolean;
+  theme?: Theme;
 }

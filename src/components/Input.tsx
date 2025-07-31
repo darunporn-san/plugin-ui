@@ -1,6 +1,7 @@
 import React from 'react';
 import { InputProps } from '@/types';
-import { usePluginContext } from '@/hooks/usePluginContext';
+import { useThemeContext } from '@/hooks/useThemeContext';
+import { defaultTheme } from '@/utils/theme';
 
 export const Input: React.FC<InputProps> = ({
   label,
@@ -9,8 +10,17 @@ export const Input: React.FC<InputProps> = ({
   onChange,
   error,
   disabled = false,
+  theme: propTheme,
 }) => {
-  const { theme } = usePluginContext();
+  // Try to get theme from context, fallback to prop theme, then default theme
+  let theme;
+  try {
+    const contextTheme = useThemeContext();
+    theme = contextTheme;
+  } catch {
+    // If no context provider, use prop theme or default theme
+    theme = propTheme || defaultTheme;
+  }
 
   const inputStyles: React.CSSProperties = {
     width: '100%',

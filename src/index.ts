@@ -3,6 +3,7 @@ export * from './components';
 
 // Export hooks
 export { usePluginContext } from './hooks/usePluginContext';
+export { useThemeContext } from './hooks/useThemeContext';
 
 // Export types
 export * from './types';
