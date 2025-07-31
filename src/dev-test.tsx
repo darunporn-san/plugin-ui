@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { PluginProvider, Button, BasicInput } from './components';
+import React from 'react';
+import { BasicInput } from './components';
 import { useForm } from "react-hook-form";
 interface FormData {
   text: string;
@@ -13,7 +13,7 @@ interface FormData {
 
 // ไฟล์สำหรับทดสอบ development โดยไม่ต้อง build
 const DevTest: React.FC = () => {
-  const { handleSubmit, control, setValue, watch, register, formState: { errors } } = useForm<FormData>({
+  const { control } = useForm<FormData>({
     defaultValues: {
       text: "",
       theme: "",

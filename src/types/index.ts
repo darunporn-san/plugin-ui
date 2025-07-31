@@ -40,11 +40,6 @@ export interface Theme {
   };
 }
 
-export interface PluginProps {
-  context: PluginContext;
-  children?: React.ReactNode;
-}
-
 export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
@@ -56,15 +51,6 @@ export interface ButtonProps {
   theme?: Theme;
 }
 
-export interface InputProps {
-  label?: string;
-  placeholder?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-  error?: string;
-  disabled?: boolean;
-  theme?: Theme;
-}
 export interface BaseSelectOption {
   value: string;
   label: string;
