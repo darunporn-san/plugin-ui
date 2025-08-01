@@ -19,12 +19,12 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
-      output: [{
+      output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM'
         }
-      }]
+      }
     },
     outDir: 'dist'
   }
